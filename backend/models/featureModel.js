@@ -1,13 +1,13 @@
 const db = require("../db");
 
-const getSections = async () => {
+const getFeatures = async () => {
   const [rows] = await db.query(
-    "CALL GetSections()"
+    "SELECT * FROM features"
   );
 
-  return rows[0];
+  return rows;
 };
 
 module.exports = {
-  getSections,
+  getFeatures,
 };

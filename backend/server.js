@@ -8,12 +8,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
+
 const sliderRoutes = require("./routes/sliderRoutes");
 const sectionRoutes = require("./routes/sectionRoutes");
+const featureRoutes = require("./routes/featureRoutes");
+const courseRoutes = require("./routes/courseRoutes");
 app.use("/api/sliders", sliderRoutes);
 app.use("/api/sections", sectionRoutes);
-
+app.use("/api/features", featureRoutes);
+app.use("/api/courses", courseRoutes);
 app.get("/", (req, res) => {
   res.send("Lambda Backend Running");
 });

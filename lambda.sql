@@ -66,20 +66,118 @@ DELIMITER ;
 
 CALL AddSection(
 'Educational Institutions',
-'From elementary schools to universities, enrich teaching methodologies and engage learners effectively.',
+'From elementary schools to universities, enrich teaching methodologies and engage learners effectively across diverse educational levels.',
 'https://lambda-demo-01.redpithemes.com/pluginfile.php/146/mod_label/intro/fp-schools.jpg'
 );
 
 
 CALL AddSection(
 'Corporate Training',
-'Offer internal training and employee development programs, fostering continuous learning.',
+'Offer internal training and employee development programs, fostering continuous learning and skill enhancement among their teams.',
 'https://lambda-demo-01.redpithemes.com/pluginfile.php/146/mod_label/intro/fp-corporate.jpg'
 );
 
 
 CALL AddSection(
 'Online Course Platforms',
-'Elevate your online course experience with a robust learning environment.',
+'Elevate your online course experiences, providing a robust and adaptable learning environment for users seeking comprehensive educational resources.',
 'https://lambda-demo-01.redpithemes.com/pluginfile.php/146/mod_label/intro/fp-online-courses.jpg'
 );
+
+DELIMITER $$
+
+CREATE PROCEDURE GetSections()
+BEGIN
+    SELECT * FROM sections;
+END $$
+
+DELIMITER ;
+
+
+CREATE TABLE features (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    icon VARCHAR(100),
+    title VARCHAR(255),
+    description TEXT,
+    more_link VARCHAR(255)
+);
+
+INSERT INTO features(icon,title,description,more_link)
+VALUES
+('lnr-cog','Powerful Admin Settings',
+'Quick and easy customization: Control style and design of your Moodle site with Lambda.',
+'#'),
+
+('lnr-laptop-phone','Flexible Layout',
+'Lambda gives you the flexibility to set the preferred layout for your e-learning site.',
+'#'),
+
+('lnr-users','Multilanguage',
+'100+ built-in language packs: Teach in your native language or take your courses globally.',
+'#'),
+
+('lnr-checkmark-circle','Built-in Components',
+'Enhance your courses and create your own content pages easily without coding.',
+'#');
+
+
+
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    category VARCHAR(255),
+    description TEXT,
+    image VARCHAR(500),
+    button_text VARCHAR(100),
+    course_link VARCHAR(500)
+);
+
+INSERT INTO courses
+(title, category, description, image, button_text, course_link)
+VALUES
+
+(
+'Creative Writing',
+'Literacy',
+'This is a sample course with contents and activities. You can take a look how resources and activities are displayed in a course view.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/19/course/overviewfiles/course-02.jpg',
+'Click to enter this course',
+'#'
+),
+
+(
+'Art History',
+'Art and Media',
+'This is a sample course with contents and activities. You can take a look how resources and activities are displayed in a course view.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/37/course/overviewfiles/course-01.jpg',
+'Click to enter this course',
+'#'
+),
+
+(
+'Biology',
+'Science and Mathematics',
+'This is a sample course with contents and activities. You can take a look how resources and activities are displayed in a course view.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/62/course/overviewfiles/course-img.jpg',
+'Click to enter this course',
+'#'
+),
+
+(
+'Content Components',
+'Miscellaneous',
+'Collection of components for the content plugins.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/86/course/overviewfiles/course-img.jpg',
+'Click to enter this course',
+'#'
+);
+
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_GetCourses()
+BEGIN
+    SELECT * FROM courses;
+END $$
+
+DELIMITER ;
