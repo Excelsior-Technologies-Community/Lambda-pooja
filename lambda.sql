@@ -181,3 +181,90 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+
+--  announcement section table
+
+CREATE TABLE announcements (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(500),
+    title VARCHAR(255),
+    author VARCHAR(100),
+    post_date VARCHAR(100),
+    heading VARCHAR(255),
+    description TEXT,
+    button_text VARCHAR(50)
+); 
+
+INSERT INTO announcements
+(image,title,author,post_date,heading,description,button_text)
+VALUES
+(
+'https://lambda-demo-01.redpithemes.com/pluginfile.…od_forum/attachment/4/news-04.jpg?forcedownload=1',
+'Suggestions for course design',
+'Admin User',
+'Saturday, 30 December 2023, 12:40 PM',
+'Ut enim ad minima veniam, quis nostrum exercitationem.',
+'Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia. Cupiditate non provident, similique ...',
+'More...'
+),
+
+(
+'https://lambda-demo-01.redpithemes.com/pluginfile.…od_forum/attachment/3/news-03.jpg?forcedownload=1',
+'Mobile hybrid teaching sets',
+'Admin User',
+'Saturday, 30 December 2023, 12:39 PM',
+'Fugiat quo voluptas nulla pariatur?',
+'At vero eos et accusamus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo enim ipsam voluptatem quia voluptas sit ...',
+'More...'
+),
+
+(
+'	https://lambda-demo-01.redpithemes.com/pluginfile.…od_forum/attachment/2/news-02.jpg?forcedownload=1',
+'The importance of digital skills',
+'Admin User',
+'Saturday, 30 December 2023, 12:38 PM',
+'Et harum quidem rerum facilis est et expedita distinctio.',
+'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat. Duis...',
+'More...'
+),
+
+(
+'	https://lambda-demo-01.redpithemes.com/pluginfile.…od_forum/attachment/1/news-01.jpg?forcedownload=1',
+'Video service for teaching',
+'Admin User',
+'Saturday, 30 December 2023, 12:37 PM',
+'Animi, id est laborum et dolorum fuga.',
+'Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Nemo enim ipsam voluptatem ...',
+'More...'
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE GetAnnouncements()
+BEGIN
+   SELECT * FROM announcements;
+END $$
+
+DELIMITER ;
+
+CALL GetAnnouncements();
+
+DELETE FROM announcements
+WHERE id IN (1,2,3,4);
+
+UPDATE announcements
+SET image='https://lambda-demo-01.redpithemes.com/pluginfile.php/144/mod_forum/attachment/4/news-04.jpg?forcedownload=1'
+WHERE id=5;
+
+UPDATE announcements
+SET image='https://lambda-demo-01.redpithemes.com/pluginfile.php/144/mod_forum/attachment/3/news-03.jpg?forcedownload=1'
+WHERE id=6;
+
+UPDATE announcements
+SET image='https://lambda-demo-01.redpithemes.com/pluginfile.php/144/mod_forum/attachment/2/news-02.jpg?forcedownload=1'
+WHERE id=7;
+
+UPDATE announcements
+SET image='https://lambda-demo-01.redpithemes.com/pluginfile.php/144/mod_forum/attachment/1/news-01.jpg?forcedownload=1'
+WHERE id=8;
