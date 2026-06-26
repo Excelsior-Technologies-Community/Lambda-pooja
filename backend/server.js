@@ -14,6 +14,9 @@ const sectionRoutes = require("./routes/sectionRoutes");
 const featureRoutes = require("./routes/featureRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const announcementRoutes = require("./routes/announcementRoutes");
+const teamRoutes = require("./routes/teamRoutes");
+const contactRoutes = require("./routes/contactRoutes");
+
 
 app.use("/api/sliders", sliderRoutes);
 app.use("/api/sections", sectionRoutes);
@@ -21,6 +24,9 @@ app.use("/api/features", featureRoutes);
 app.use("/api/courses", courseRoutes);
 app.get("/", (req, res) => {res.send("Lambda Backend Running");});
 app.use("/api/announcements",announcementRoutes);
+app.use("/api", teamRoutes);
+app.use("/api/team", teamRoutes);
+app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 

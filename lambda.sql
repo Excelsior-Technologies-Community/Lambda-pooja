@@ -268,3 +268,102 @@ WHERE id=7;
 UPDATE announcements
 SET image='https://lambda-demo-01.redpithemes.com/pluginfile.php/144/mod_forum/attachment/1/news-01.jpg?forcedownload=1'
 WHERE id=8;
+
+-- team_members table 
+
+CREATE TABLE team_members (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    designation VARCHAR(100),
+    description TEXT,
+    image VARCHAR(500),
+    facebook VARCHAR(255),
+    instagram VARCHAR(255),
+    twitter VARCHAR(255),
+    status TINYINT DEFAULT 1
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_AddTeamMember(
+    IN p_name VARCHAR(100),
+    IN p_designation VARCHAR(100),
+    IN p_description TEXT,
+    IN p_image VARCHAR(500),
+    IN p_facebook VARCHAR(255),
+    IN p_instagram VARCHAR(255),
+    IN p_twitter VARCHAR(255)
+)
+BEGIN
+
+INSERT INTO team_members
+(
+name,
+designation,
+description,
+image,
+facebook,
+instagram,
+twitter
+)
+
+VALUES
+(
+p_name,
+p_designation,
+p_description,
+p_image,
+p_facebook,
+p_instagram,
+p_twitter
+);
+
+END $$
+
+DELIMITER ;
+
+
+CALL sp_AddTeamMember(
+
+'David Olsson',
+'Co-Founder, Creative Director',
+'You can introduce your site and your teachers here. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/140/mod_page/content/13/portrait-1.jpg',
+'https://www.facebook.com/mycollege',
+'https://www.instagram.com/mycollege',
+'https://twitter.com/mycollege'
+);
+
+CALL sp_AddTeamMember(
+'Sara Lisbon',
+'Adobe Certified Expert',
+'You can introduce your site and your teachers here. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/140/mod_page/content/13/portrait-02b.jpg',
+'https://www.facebook.com/mycollege',
+'https://www.instagram.com/mycollege',
+'https://twitter.com/mycollege'
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_GetTeamMembers()
+BEGIN
+
+SELECT * FROM team_members WHERE status=1 ORDER BY id;
+
+END $$
+
+DELIMITER ;
+
+
+--  Contact page table
+
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    subject VARCHAR(200) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+select * from contacts;
