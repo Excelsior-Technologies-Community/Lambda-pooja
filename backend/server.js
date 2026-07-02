@@ -34,6 +34,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/faqs", faqRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/allcourses", require("./routes/allcourseRoutes"));
 
 const PORT = process.env.PORT || 5000;
 

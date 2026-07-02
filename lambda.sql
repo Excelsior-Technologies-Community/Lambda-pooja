@@ -433,3 +433,116 @@ select * from faqs;
 
 DELETE FROM faqs
 WHERE id IN (5,6,7,8);
+
+
+
+
+-- all courses page table
+USE lambda_db;
+
+CREATE TABLE allcourses(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+	course_name VARCHAR(200),
+	category VARCHAR(100),
+	description TEXT,
+	image VARCHAR(500)
+); 
+
+INSERT INTO allcourses(course_name,category,description,image)
+VALUES
+
+('Creative Writing',
+'Literacy',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/19/course/overviewfiles/course-02.jpg'),
+
+('Art History',
+'Art and Media',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Tiles" course format and makes use of the collapsible sidebar.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/37/course/overviewfiles/course-01.jpg'),
+
+('Biology',
+'Science and Mathematics',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Buttons" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/62/course/overviewfiles/course-img.jpg '),
+
+('Content components',
+'Miscellaneous',
+'Collection of components for the content plugins.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/86/course/overviewfiles/course-img.jpg'),
+
+('Bootstrap Components',
+'Miscellaneous',
+'Bootstrap is a powerful, feature-packed frontend toolkit.. This course contains a collection of available components for this framework.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/109/course/overviewfiles/course-img.jpg'),
+
+('H5P Demo Course',
+'Miscellaneous',
+'H5P is a plugin for existing publishing systems that enables the system to create interactive content like Interactive Videos, Presentations, Games, Quizzes and more!',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/127/course/overviewfiles/course-img.jpg'),
+
+('Types of Sport',
+'Physical Education',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/151/course/overviewfiles/course-img.jpg'),
+
+('Effective Memory Techniques',
+'Society and Environment',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/170/course/overviewfiles/course-img.jpg'),
+
+('Critical Thinking: Develop your skills',
+'Society and Environment',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/188/course/overviewfiles/course-img.jpg'),
+
+('World of Water',
+'Society and Environment',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/206/course/overviewfiles/course-img.jpg'),
+
+('English: The Lake Poets',
+'Literacy',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/224/course/overviewfiles/course-img.jpg '),
+
+('Junior Mathematics',
+'Science and Mathematics',
+'This is a sample course with contents and activities. You can take a look how ressources and activities are displayed in a course view. This sample course uses the "Topics" course format.',
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/242/course/overviewfiles/course-img.jpg');
+
+
+DELIMITER $$
+
+CREATE PROCEDURE GetCourses()
+
+BEGIN
+ SELECT * FROM allcourses;
+END $$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE GetCategories()
+
+BEGIN
+ SELECT DISTINCT category FROM allcourses;
+END $$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE GetCourseByCategory(
+IN p_category VARCHAR(100)
+)
+BEGIN
+	SELECT * FROM allcourses WHERE category=p_category;
+END $$
+
+DELIMITER ;
+
+select * from allcourses;
