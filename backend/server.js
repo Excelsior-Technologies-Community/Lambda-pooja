@@ -16,6 +16,10 @@ const courseRoutes = require("./routes/courseRoutes");
 const announcementRoutes = require("./routes/announcementRoutes");
 const teamRoutes = require("./routes/teamRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const galleryRoutes = require("./routes/galleryRoutes");
+const faqRoutes = require("./routes/faqRoutes");
+const authRoutes = require("./routes/authRoutes");
+
 
 
 app.use("/api/sliders", sliderRoutes);
@@ -27,6 +31,9 @@ app.use("/api/announcements",announcementRoutes);
 app.use("/api", teamRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/gallery", galleryRoutes);
+app.use("/api/faqs", faqRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 

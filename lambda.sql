@@ -297,26 +297,8 @@ CREATE PROCEDURE sp_AddTeamMember(
 BEGIN
 
 INSERT INTO team_members
-(
-name,
-designation,
-description,
-image,
-facebook,
-instagram,
-twitter
-)
-
-VALUES
-(
-p_name,
-p_designation,
-p_description,
-p_image,
-p_facebook,
-p_instagram,
-p_twitter
-);
+(name,designation,description,image,facebook,instagram,twitter)
+VALUES(p_name,p_designation,p_description,p_image,p_facebook,p_instagram,p_twitter);
 
 END $$
 
@@ -367,3 +349,87 @@ CREATE TABLE contacts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 select * from contacts;
+
+-- Login users table
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(150) UNIQUE,
+    password_hash CHAR(64) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users(username,email,password_hash)
+VALUES('admin','admin@lambda.com',SHA2('admin123',256));
+select * from users;
+
+CREATE TABLE image_gallery (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(500) NOT NULL,
+    title VARCHAR(100),
+    status TINYINT DEFAULT 1
+);
+
+INSERT INTO image_gallery(image_url,title) VALUES
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-01.jpg','Image 1'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-02.jpg','Image 2'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-03.jpg','Image 3'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-04.jpg','Image 4'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-05.jpg','Image 5'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-07.jpg','Image 6'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-08.jpg','Image 7'),
+
+('https://lambda-demo-01.redpithemes.com/pluginfile.php/283/block_lambdacb/gallery/gallery-img-06.jpg','Image 8');
+
+DELIMITER $$
+
+CREATE PROCEDURE GetGalleryImages()
+BEGIN
+    SELECT *
+    FROM image_gallery
+    WHERE status=1
+    ORDER BY id;
+END$$
+
+DELIMITER ;
+select * from image_gallery;
+
+
+CREATE DATABASE lambda;
+
+USE lambda;
+
+CREATE TABLE faqs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    answer TEXT NOT NULL
+);
+
+INSERT INTO faqs(question,answer) VALUES
+('#01 - What is Lorem Ipsum?',
+'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'),
+
+('#02 - Where does it come from?',
+'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.'),
+
+('#03 - Why do we use it?',
+'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.'),
+
+('#04 - Where can I get some?',
+'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable.');
+
+
+DELETE FROM image_gallery
+
+WHERE id IN (1,2,3,4,5,6,7,8);
+select * from faqs;
+
+DELETE FROM faqs
+WHERE id IN (5,6,7,8);
