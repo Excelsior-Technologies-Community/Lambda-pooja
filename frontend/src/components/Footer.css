@@ -1,0 +1,169 @@
+.footer {
+  background: #343d4a;
+  color: #d7d7d7;
+  margin-top: 50px;
+}
+
+.footer-top {
+  width: 90%;
+  margin: auto;
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 50px;
+}
+
+.footer-column h3 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 30px;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #f4b321;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-row h5 {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.footer-text {
+  margin-bottom: 30px;
+}
+
+.buy-link,
+.older-link {
+  color: #f4b321;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.footer-column ul li i {
+  color: #f4b321;
+  margin-right: 8px;
+}
+
+.announcement {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 0;
+}
+
+.announcement span {
+  display: inline-block;
+  width: 50%;
+  font-size: 14px;
+}
+
+.announcement p {
+  color: #f4b321;
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  background: #2c3440;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-left p {
+  margin-bottom: 12px;
+}
+
+.bottom-left a {
+  color: #f4b321;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.social-icons a i {
+  color: #fff !important;
+}
+
+.social-icons a:nth-child(1) {
+  background: #1877f2; 
+}
+
+.social-icons a:nth-child(2) {
+  background: #e4405f; 
+}
+
+.social-icons a:nth-child(3) {
+  background: #ff0033;
+}
+
+.social-icons a:nth-child(4) {
+  background: #4a3825; 
+}
+
+.social-icons a i {
+  color: white !important;
+}
+
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}

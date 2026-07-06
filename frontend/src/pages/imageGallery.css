@@ -1,0 +1,133 @@
+.gallery-container {
+  width: 90%;
+  margin: 70px auto;
+}
+
+.gallery-container h2 {
+  text-align: center;
+  color: #1d3557;
+  font-size: 34px;
+}
+
+.gallery-container p {
+  text-align: center;
+  color: gray;
+  margin-bottom: 45px;
+  font-size: 22px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 260px;
+  gap: 12px;
+}
+
+/* Image Box */
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Third Image Tall */
+
+.gallery-tall {
+  grid-row: span 2;
+}
+
+/* Image */
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .5s;
+}
+
+/* Hover Zoom */
+
+/* .gallery-item:hover img {
+  transform: scale(1.1);
+} */
+
+/* Overlay */
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: .4s;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Plus Button */
+
+.gallery-overlay a {
+  color: white;
+  text-decoration: none;
+
+  width: 70px;
+  height: 70px;
+
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 42px;
+
+  transition: .4s;
+}
+
+/* .gallery-overlay a:hover {
+  background: white;
+  color: black;
+  transform: rotate(90deg);
+} */
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.gallery-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery-tall{
+
+grid-row:span 1;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-tall{
+
+grid-row:span 1;
+
+}
+
+}

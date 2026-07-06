@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   TOP HEADER
+===================== */
+
+.header-top {
+  background: #f5f5f5;
+  padding: 38px 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 2px solid #d5a11e;
+}
+
+.logo-section img {
+  width: 250px;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.login-row {
+  display: flex;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.field-icon {
+  width: 38px;
+  height: 34px;
+  background: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+
+.field input {
+  width: 160px;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 46px;
+  border: none;
+  background: #6d7985;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  margin-top: 8px;
+  color: #e8a515;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar {
+  background: #3f4a52;
+  height: 60px;
+  padding: 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  margin-right: 28px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrow {
+  font-size: 11px;
+}
+
+/* Home Icon */
+
+.home-item {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #5a6670;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.home-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 50px;
+  height: 4px;
+  background: #d9a11c;
+}
+
+.home-item a {
+  color: white;
+  font-size: 18px;
+}
+
+/* ====================================
+   DROPDOWN MENU
+==================================== */
+
+.menu li {
+  position: relative;
+}
+
+/* Dropdown Box */
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  background: #ffffff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 3px solid #d9a11c;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+
+  z-index: 9999;
+}
+
+/* Show on Hover */
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* List */
+
+.dropdown-menu li {
+  margin: 0;
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 14px 20px;
+  color: #555;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+/* Hover */
+
+.dropdown-menu li a:hover {
+  background: #d9a11c;
+  color: #fff;
+  padding-left: 30px;
+}
+
+/* Rotate Arrow */
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+  transition: .3s;
+}
+
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  position: absolute;
+  right: 45px;
+  width: 250px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  outline: none;
+  padding: 0 15px;
+  font-size: 14px;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.search-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #070707 !important;
+  color: rgb(255, 255, 255) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

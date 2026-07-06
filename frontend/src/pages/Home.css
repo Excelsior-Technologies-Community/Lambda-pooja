@@ -1,0 +1,591 @@
+
+body {
+  background: #eeeeee;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.slider-container {
+  width: 90%;
+  height: 450px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.overlay {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 550px;
+  background: rgba(255, 255, 255, 0.90);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.overlay h1 {
+  font-size: 55px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+.overlay p {
+  font-size: 24px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.overlay button {
+  margin-top: 20px;
+  background: #f2b632;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 70px;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+.prev-btn {
+  left: 0;
+}
+
+
+.next-btn {
+  right: 0;
+}
+
+
+/* Learning Section */
+.learning-section {
+  width: 90%;
+  margin: 30px auto;
+  background: white;
+  padding: 60px 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.learning-section h2 {
+  font-size: 35px;
+  color: #555;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+
+.learning-section h1 {
+  font-size: 50px;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card img {
+  width: 90%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+
+.card:hover img {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin: 25px 0 15px;
+  color: #444;
+  font-size: 22px;
+}
+
+
+.card p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Feature Section */
+.feature-section {
+  margin-top: 100px;
+  padding-top: 20px;
+  background: transparent;
+  text-align: center;
+}
+
+.feature-section h2 {
+  font-size: 52px;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: #f9bf3b;
+  margin: 20px auto 40px;
+}
+
+.feature-subtitle {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto 80px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.feature-card {
+  text-align: left;
+}
+
+.feature-icon {
+  font-size: 60px;
+  color: #f9bf3b;
+  margin-bottom: 25px;
+  transition: 0.4s;
+}
+
+.feature-card:hover .feature-icon {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  color: #444;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.feature-card a {
+  color: #f9bf3b;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+/* WHY CHOOSE US */
+
+.why-choose-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.why-left {
+  flex: 1;
+}
+
+.why-small-title {
+  color: #f5a623;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.why-left h2 {
+  font-size: 42px;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+.accordion-header:hover {
+  color: #f5b335;
+}
+
+.accordion-arrow {
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.accordion-header:hover .accordion-arrow {
+  color: #f5b335;
+}
+
+.accordion-content {
+  padding: 0 0 20px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.why-right {
+  flex: 1;
+}
+
+.why-right img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    flex-direction: column;
+  }
+
+  .why-left h2 {
+    font-size: 30px;
+  }
+}
+
+
+/* BENEFITS SECTION */
+
+.benefits-section {
+  display: flex;
+  gap: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.benefit-card {
+  flex: 1;
+  background: #f5eedc;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  font-size: 50px;
+  color: #d9a321;
+  flex-shrink: 0;
+}
+
+.benefit-content h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.benefit-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+}
+
+@media (max-width: 992px) {
+  .benefits-section {
+    flex-direction: column;
+  }
+}
+
+
+/* course section */
+.courses-section {
+  margin-top: 100px;
+  text-align: left;
+}
+
+.courses-section h2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.yellow-line {
+  width: 55px;
+  height: 3px;
+  background: #f2b632;
+  margin-bottom: 25px;
+}
+
+.course-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 35px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.course-item img {
+  width: 325px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.course-content {
+  flex: 1;
+  text-align: left;
+}
+
+.course-content h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #444;
+  margin: 0 0 8px;
+}
+
+.course-content span {
+  display: block;
+  color: #8b8b8b;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.course-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  max-width: 800px;
+}
+
+.course-btn {
+  display: inline-block;
+  background: #f2b632;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.course-btn:hover {
+  background: #e0a41e;
+}
+
+.paging {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.all-course-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .course-item {
+    flex-direction: column;
+  }
+
+  .course-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* announcement section */
+.announcement-section {
+  width: 90%;
+  margin: 80px auto;
+}
+
+.announcement-section h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  text-align: start;
+}
+
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Center the last card when there are 4 cards */
+.announcement-card:last-child {
+  grid-column: 2 / 3;
+}
+
+.announcement-card {
+  background: #fff;
+}
+
+.announcement-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.announcement-card h4 {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #444;
+  font-weight: 500;
+  align-items: left;
+}
+
+.announcement-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.meta-icon {
+  color: #fbc02d;
+  font-size: 16px;
+}
+
+.by-text {
+  color: #333;
+}
+
+.author-name {
+  color: #fbc02d;
+}
+
+.post-date {
+  color: #666;
+}
+
+.announcement-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+.announcement-card h3 {
+  font-size: 29px;
+  font-weight: 400;
+  color: #707070;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.announcement-card p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 18px;
+  text-align: left;
+}
+
+.announcement-card button {
+  background: #fbc02d;
+  border: none;
+  padding: 12px 25px;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.announcement-card button:hover {
+  background: #f9a825;
+}
+
+@media(max-width:992px){
+
+  .announcement-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .announcement-grid{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+

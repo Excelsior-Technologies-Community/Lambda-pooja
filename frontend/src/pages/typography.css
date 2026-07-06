@@ -1,0 +1,424 @@
+.typography-page {
+  background: #eef0f2;
+  color: #3f4b56;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px 0 34px;
+}
+
+.typography-card {
+  background: #fff;
+  border-radius: 3px;
+  margin: 0 auto;
+  max-width: 1214px;
+  min-height: 660px;
+  padding: 0 16px 34px;
+}
+
+.typography-tabs {
+  border-bottom: 1px solid #d9dee2;
+  display: flex;
+  gap: 0;
+  padding-top: 18px;
+}
+
+.typography-tab {
+  background: transparent;
+  border: 0;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 16px 10px;
+}
+
+.typography-tab.active {
+  border-bottom: 2px solid #f8aa1c;
+  color: #3f4b56;
+}
+
+.typography-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 31px 5px 18px;
+}
+
+.typography-next {
+  background: #56616b;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+.typography-section {
+  margin-top: 32px;
+}
+
+.typography-title {
+  color: #3f4b56;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 22px;
+}
+
+.title-rule {
+  border-top: 1px solid #d9dee2;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title-rule::before {
+  background: #f8aa1c;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: -1px;
+  width: 84px;
+}
+
+.example-box {
+  border: 1px solid #d9dee2;
+  border-radius: 2px;
+  padding: 44px 16px 16px;
+  position: relative;
+}
+
+.example-label {
+  background: #eef6fc;
+  border: 1px solid #d9dee2;
+  color: #3f4b56;
+  font-size: 14px;
+  left: -1px;
+  line-height: 1;
+  padding: 10px 8px;
+  position: absolute;
+  top: -1px;
+}
+
+.headline-example {
+  border-bottom: 1px solid #d9dee2;
+  margin: 0;
+  padding: 8px 0 36px;
+  text-align: center;
+}
+
+.headline-example + .headline-example {
+  padding-top: 55px;
+}
+
+.headline-example:last-child {
+  border-bottom: 0;
+}
+
+.headline-kicker {
+  color: #f8aa1c;
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.headline-example.primary .headline-kicker {
+  color: #3f4b56;
+}
+
+.headline-example h2 {
+  color: #3f4b56;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.headline-divider {
+  background: #f8aa1c;
+  display: block;
+  height: 4px;
+  margin: 23px auto 22px;
+  width: 84px;
+}
+
+.headline-example p:last-child {
+  color: #3f4b56;
+  font-size: 17px;
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 1110px;
+}
+
+.paragraph-example {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.paragraph-lead {
+  color: #3f4b56;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.paragraph-example p {
+  color: #3f4b56;
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.blockquote-example {
+  border-left: 4px solid #f8aa1c;
+  margin: 0;
+  padding: 24px 22px;
+  background: #f9fafb;
+  color: #3f4b56;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.blockquote-example::before {
+  content: "“";
+  color: #f8aa1c;
+  font-size: 40px;
+  line-height: 0.85;
+  position: relative;
+  top: 6px;
+}
+
+.blockquote-example footer {
+  color: #6f7c87;
+  font-size: 15px;
+  margin-top: 18px;
+}
+
+.blockquote-example cite {
+  font-style: normal;
+  color: #3f4b56;
+}
+
+.list-example {
+  max-width: 100%;
+}
+
+.list-default {
+  margin: 0 0 28px;
+  padding-left: 24px;
+  color: #3f4b56;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.list-default li {
+  margin-bottom: 12px;
+}
+
+.list-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.list-columns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-columns li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  color: #3f4b56;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.list-style-1 li::before,
+.list-style-2 li::before,
+.list-style-3 li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f8aa1c;
+  font-weight: 700;
+}
+
+.list-style-1 li::before {
+  content: "›";
+}
+
+.list-style-2 li::before {
+  content: "➤";
+}
+
+.list-style-3 li::before {
+  content: "✔";
+}
+
+.heading-box {
+  padding-bottom: 0;
+}
+
+.table-default,
+.table-primary,
+.table-striped {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.table-default th,
+.table-default td,
+.table-primary th,
+.table-primary td,
+.table-striped th,
+.table-striped td {
+  border: 1px solid #d9dee2;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.table-default thead,
+.table-striped thead {
+  background: #d7dce1;
+}
+
+.table-primary thead {
+  background: #2f4254;
+  color: #fff;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background: #f3f6f8;
+}
+
+.fontawesome-example {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.fontawesome-example i {
+  color: #538dd7;
+  font-size: 3rem;
+  float: left;
+  margin-right: 2rem;
+}
+
+.fontawesome-example p {
+  color: #3f4b56;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+.fontawesome-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.fontawesome-icons i {
+  color: #2b5f9a;
+  font-size: 2.5rem;
+}
+
+.icon-callout {
+  align-items: center;
+  background: #ee5b36;
+  border-radius: 4px;
+  display: flex;
+  color: #fff;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 18px 20px;
+}
+
+.icon-callout i {
+  font-size: 1.2rem;
+}
+
+.icon-callout span {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+.heading-row {
+  border-top: 1px solid #d9dee2;
+  padding: 14px 10px 18px;
+}
+
+.heading-row:first-of-type {
+  margin-top: 2px;
+}
+
+.heading-row h1,
+.heading-row h2,
+.heading-row h3,
+.heading-row h4,
+.heading-row h5,
+.heading-row h6 {
+  color: #3f4b56;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.heading-row h1 {
+  font-size: 36px;
+}
+
+.heading-row h2 {
+  font-size: 30px;
+}
+
+.heading-row h3 {
+  font-size: 24px;
+}
+
+.heading-row h4 {
+  font-size: 20px;
+}
+
+.heading-row h5 {
+  font-size: 18px;
+}
+
+.heading-row h6 {
+  font-size: 15px;
+}
+
+.heading-row span {
+  color: #3f4b56;
+  font-size: 65%;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .typography-card {
+    border-radius: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .typography-title,
+  .headline-example h2 {
+    font-size: 26px;
+  }
+
+  .headline-example p:last-child {
+    font-size: 15px;
+  }
+
+  .heading-row h1 {
+    font-size: 32px;
+  }
+}
