@@ -11,6 +11,8 @@ import AllCourses from "./pages/all_Courses";
 import CourseDetails from "./pages/course_details";
 import Typography from "./pages/typography";
 import ThemeCore from "./pages/theme_core";
+import FlexibleLayout from "./pages/flexible_layout";
+import Responsive from "./pages/responsive";
 
 function AppContent() {
   const location = useLocation();
@@ -32,6 +34,8 @@ function AppContent() {
         <Route path="/course_details" element={<CourseDetails />} />
         <Route path="/typography" element={<Typography />} />
         <Route path="/theme_core" element={<ThemeCore />} />
+        <Route path="/flexible_layout" element={<FlexibleLayout />} />
+        <Route path="/responsive" element={<Responsive />} />
       </Routes>
     </>
   );

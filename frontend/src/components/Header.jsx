@@ -81,8 +81,9 @@ const [showSearch, setShowSearch] = useState(false);
             <ul className="dropdown-menu">
               <li><Link to="/typography">Typography</Link></li>
               <li><Link to="/theme_core">Theme Core Features</Link></li>
-              <li><a href="/flexible-layout">Flexible Layout</a></li>
-              <li><a href="/responsive-design">Responsive Design</a></li>
+              <li><Link to="/flexible_layout">Flexible Layout</Link></li>
+              <li><Link to="/responsive">Responsive Design</Link></li>
+            
               <li><a href="/multilanguage">Multilanguage</a></li>
               <li><a href="/components">Built-in Components</a></li>
             </ul>

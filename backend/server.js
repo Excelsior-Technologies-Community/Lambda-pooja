@@ -19,7 +19,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const galleryRoutes = require("./routes/galleryRoutes");
 const faqRoutes = require("./routes/faqRoutes");
 const authRoutes = require("./routes/authRoutes");
-
+const themeCoreRoutes = require("./routes/themeCoreRoutes");
 
 
 app.use("/api/sliders", sliderRoutes);
@@ -35,6 +35,7 @@ app.use("/api/gallery", galleryRoutes);
 app.use("/api/faqs", faqRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/allcourses", require("./routes/allcourseRoutes"));
+app.use("/api/theme-core", themeCoreRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -546,3 +546,44 @@ END $$
 DELIMITER ;
 
 select * from allcourses;
+
+
+CREATE TABLE theme_core_features (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100),
+    description TEXT,
+    status TINYINT DEFAULT 1
+);
+
+INSERT INTO theme_core_features(title,description) VALUES
+('Custom Layouts','Choose between a "boxed" and a "wide" page layout with further setting options.'),
+('Header Options','Create the perfect header for your site and add a flexible top bar.'),
+('Footer Options','Change the footer style with columns for core Moodle blocks and add your social channels.'),
+('Moodle Blocks','Multiple block positions and styles allow you to enhance your core course content.'),
+('Unlimited Colors','The theme options make it easy for you to customize the style of your Moodle site.'),
+('Frontpage Settings','Hero section for calling extra attention to some special content that attract your visitors.'),
+('Font Selector','Select different fonts for body text and heading from the Google font Collection.'),
+('Various UI Components','Dozens of reusable components to enhance your courses or to create your custom pages.'),
+('Social Media','Theme Lambda makes it easy for you to place social network icons to your Moodle site.'),
+('Multilanguage Support','Theme Lambda provides support for multilingual websites in LTR and RTL languages.'),
+('Scroll To Top','Enable a scroll to top arrow for your site.'),
+('Regular updates','Theme Lambda is the longest standing premium Moodle theme.'),
+('Custom Enrolment Page','Create attractive pages where users can subscribe to a course.'),
+('Site News','Show your site news with an attractive blog-style layout.'),
+('Course Overview','Choose between different styles and options to promote your courses.'),
+('Responsive Design','Theme Lambda adapts to all screen resolutions. It''s 100% responsive and looks great on all devices.')
+;
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_GetThemeCoreFeatures()
+BEGIN
+    SELECT *
+    FROM theme_core_features
+    WHERE status=1
+    ORDER BY id;
+END$$
+
+DELIMITER ;
+
+select * from theme_core_features ;
