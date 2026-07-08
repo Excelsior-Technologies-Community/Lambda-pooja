@@ -39,7 +39,7 @@ function AppContent() {
         <Route path="/flexible_layout" element={<FlexibleLayout />} />
         <Route path="/responsive" element={<Responsive />} />
         <Route path="/multilanguage" element={<Multilanguage />} />
-        <Route path="/built-in-components" element={<BuiltInComponents />} />
+        <Route path="/built_in_components" element={<BuiltInComponents />} />
       </Routes>
     </>
   );
