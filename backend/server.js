@@ -20,7 +20,7 @@ const galleryRoutes = require("./routes/galleryRoutes");
 const faqRoutes = require("./routes/faqRoutes");
 const authRoutes = require("./routes/authRoutes");
 const themeCoreRoutes = require("./routes/themeCoreRoutes");
-
+const builtInComponentsRoutes = require("./routes/builtInComponentsRoutes");
 
 app.use("/api/sliders", sliderRoutes);
 app.use("/api/sections", sectionRoutes);
@@ -36,6 +36,7 @@ app.use("/api/faqs", faqRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/allcourses", require("./routes/allcourseRoutes"));
 app.use("/api/theme-core", themeCoreRoutes);
+app.use("/api/built-in-components", builtInComponentsRoutes);
 
 const PORT = process.env.PORT || 5000;
 

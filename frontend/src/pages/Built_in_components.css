@@ -1,0 +1,158 @@
+.builtin-components-page {
+  background: #eef0f2;
+  color: #3f4b56;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px 0 34px;
+}
+
+.builtin-components-card {
+  background: #fff;
+  border-radius: 3px;
+  margin: 0 auto;
+  max-width: 1214px;
+  min-height: 660px;
+  padding: 0 16px 34px;
+}
+
+.builtin-components-tabs {
+  border-bottom: 1px solid #d9dee2;
+  display: flex;
+  gap: 0;
+  padding-top: 18px;
+}
+
+.builtin-components-tab {
+  background: transparent;
+  border: 0;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 16px 10px;
+}
+
+.builtin-components-tab.active {
+  border-bottom: 2px solid #f8aa1c;
+  color: #3f4b56;
+}
+
+.builtin-components-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 31px 5px 18px;
+}
+.builtin-components-Previous{
+  background: #56616b;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+
+.builtin-components-title{
+    text-align:center;
+    margin:60px  70px;
+    background-color: white;
+    
+}
+
+.builtin-components-title span{
+    color:#f5a623;
+    font-size:18px;
+}
+
+.builtin-components-title h2{
+    font-size:30px;
+    font-weight:400;
+    margin:15px 0;
+    color:#666;
+}
+
+.builtin-components-title p{
+    color:#666;
+    font-size:17px !important;
+}
+
+.builtin-components-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    width:90%;
+    margin:50px auto;
+}
+
+
+.theme-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+  width: 100%;
+}
+
+
+
+
+/* Course List */
+.course-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 35px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Image */
+.course-card img {
+  width: 330px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Right Content */
+.course-content {
+  flex: 1;
+}
+
+.course-content h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #444;
+  font-weight: 400;
+}
+
+.course-content span {
+  display: block;
+  margin: 10px 0 15px;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+
+.course-content p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.course-content button {
+  background: #fbc02d;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  transition: 0.3s;
+}
+
+.course-content button:hover {
+  background: #f9a825;
+}

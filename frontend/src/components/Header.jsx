@@ -84,7 +84,7 @@ const [showSearch, setShowSearch] = useState(false);
               <li><Link to="/flexible_layout">Flexible Layout</Link></li>
               <li><Link to="/responsive">Responsive Design</Link></li>
               <li><Link to="/multilanguage">Multilanguage</Link></li>
-              <li><a href="/components">Built-in Components</a></li>
+              <li><Link to="/built-in-components">Built-in Components</Link></li>
             </ul>
           </li>
 

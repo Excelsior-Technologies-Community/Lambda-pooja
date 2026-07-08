@@ -587,3 +587,51 @@ END$$
 DELIMITER ;
 
 select * from theme_core_features ;
+
+drop table built_in_components;
+CREATE TABLE built_in_components (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(500),
+    title VARCHAR(255),
+    category VARCHAR(100),
+    description TEXT,
+    button_text VARCHAR(100)
+);
+
+INSERT INTO built_in_components
+(image,title,category,description,button_text)
+VALUES
+(
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/86/course/overviewfiles/course-img.jpg',
+'Content components',
+'Miscellaneous',
+'Collection of components for the content plugins.',
+'Click to enter this course'
+),
+
+(
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/109/course/overviewfiles/course-img.jpg',
+'Bootstrap Components',
+'Miscellaneous',
+'Bootstrap is a powerful frontend toolkit. This course contains a collection of available components.',
+'Click to enter this course'
+),
+
+(
+'https://lambda-demo-01.redpithemes.com/pluginfile.php/127/course/overviewfiles/course-img.jpg',
+'Built-in Components',
+'Miscellaneous',
+'Collection of built-in components available in Lambda.',
+'Click to enter this course'
+);
+
+
+
+DELIMITER $$
+
+CREATE PROCEDURE sp_GetBuiltInComponents()
+BEGIN
+    SELECT * FROM built_in_components;
+END $$
+
+DELIMITER ;

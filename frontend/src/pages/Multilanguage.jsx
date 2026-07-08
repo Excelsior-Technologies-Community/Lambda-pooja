@@ -37,7 +37,8 @@ function Multilanguage() {
             </div>
             <div className="multilanguage-actions">
                 <button className="multilanguage-Previous" onClick={() => navigate("/responsive")}>Previous</button>
-                <button className="multilanguage-next">Next</button>
+                <button className="multilanguage-next" onClick={() => navigate("/built-in-components")}>Next</button>
+            
             </div>
 
                 <div className="multilanguage-title">
@@ -74,7 +75,7 @@ function Multilanguage() {
 
             <div className="multilanguage-actions">
                   <button className="multilanguage-Previous" onClick={() => navigate("/responsive")}>Previous</button>
-                <button className="multilanguage-next">Next</button>
+                  <button className="multilanguage-next" onClick={() => navigate("/built-in-components")}>Next</button>
             </div>
 
         </section>
