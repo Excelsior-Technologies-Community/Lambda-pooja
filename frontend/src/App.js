@@ -14,7 +14,6 @@ import ThemeCore from "./pages/theme_core";
 import FlexibleLayout from "./pages/flexible_layout";
 import Responsive from "./pages/responsive";
 import Multilanguage from "./pages/Multilanguage";
-import BuiltInComponents from "./pages/built_in_components";
 
 function AppContent() {
   const location = useLocation();
