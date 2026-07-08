@@ -301,3 +301,100 @@
     width: 100%;
   }
 }
+
+/* Lost Password Panel Styles */
+.lost-password-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.lost-password-panel > p {
+  margin: 0 0 30px;
+  color: #4f5961;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.lost-password-section {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #e2e6e9;
+}
+
+.lost-password-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.lost-password-section h3 {
+  margin: 0 0 16px;
+  color: #4b5660;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.lost-password-section label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.lost-password-section label span {
+  font-size: 14px;
+  color: #4f5961;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.lost-password-section input {
+  padding: 10px 12px;
+  border: 1px solid #d1d6da;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #3f474d;
+  background: #ffffff;
+  margin-bottom: 14px;
+}
+
+.lost-password-section input:focus {
+  outline: none;
+  border-color: #f8bc36;
+  box-shadow: 0 0 0 3px rgba(248, 188, 54, 0.1);
+}
+
+.lost-password-search-btn {
+  align-self: flex-start;
+  min-width: 120px;
+  height: 40px;
+  border: 0;
+  border-radius: 2px;
+  background: #f8bc36;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s ease;
+}
+
+.lost-password-search-btn:hover {
+  background: #f0a927;
+}
+
+.lost-password-divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #e2e6e9;
+}
+
+.lost-password-message {
+  margin: 20px 0 16px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: #fff5d9;
+  color: #6d5728;
+  font-size: 14px;
+  text-align: center;
+}

@@ -19,11 +19,17 @@ function Login() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCookieNotice, setShowCookieNotice] = useState(false);
+  const [showLostPassword, setShowLostPassword] = useState(false);
   const [message, setMessage] = useState("");
+  const [lostPasswordMessage, setLostPasswordMessage] = useState("");
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
+  });
+  const [lostPasswordForm, setLostPasswordForm] = useState({
+    searchType: "username",
+    value: "",
   });
 
   useEffect(() => {
@@ -39,6 +45,31 @@ function Login() {
       ...form,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleLostPasswordSubmit = async (e) => {
+    e.preventDefault();
+    setLostPasswordMessage("");
+
+    try {
+      const endpoint = "http://localhost:5000/api/auth/forgot-password";
+      const payload = {
+        [lostPasswordForm.searchType]: lostPasswordForm.value,
+      };
+
+      const res = await axios.post(endpoint, payload);
+      setLostPasswordMessage(res.data.message || "If an account exists, a reset link has been sent to your email.");
+      
+      setTimeout(() => {
+        setShowLostPassword(false);
+        setLostPasswordForm({ searchType: "username", value: "" });
+        setLostPasswordMessage("");
+      }, 3000);
+    } catch (err) {
+      setLostPasswordMessage(
+        err.response?.data?.message || "An error occurred. Please try again."
+      );
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -89,8 +120,10 @@ function Login() {
     <main className="login-page">
       <section className="login-panel" aria-label="Lambda login">
         <div className="login-panel-inner">
-          <img src={logoUrl} alt="Lambda Theme for Moodle" className="login-logo" />
+          {!showLostPassword && <img src={logoUrl} alt="Lambda Theme for Moodle" className="login-logo" />}
 
+          {!showLostPassword ? (
+            <>
           <form className="login-form" onSubmit={handleSubmit}>
             <label className="login-field">
               <FaUser aria-hidden="true" />
@@ -139,7 +172,7 @@ function Login() {
             </button>
           </form>
 
-          <button className="lost-password" type="button">
+          <button className="lost-password" type="button" onClick={() => setShowLostPassword(true)}>
             Lost password?
           </button>
 
@@ -178,6 +211,69 @@ function Login() {
           >
             Cookies notice
           </button>
+            </>
+          ) : (
+            <div className="lost-password-panel">
+              <p>
+                To reset your password, submit your username or your email
+                address below. If we can find you in the database, an email will
+                be sent to your email address, with instructions how to get
+                access again.
+              </p>
+
+              <form onSubmit={handleLostPasswordSubmit}>
+                <div className="lost-password-section">
+                  <h3>Search by username</h3>
+                  <label>
+                    <span>Username</span>
+                    <input
+                      type="text"
+                      placeholder="Enter your username"
+                      value={lostPasswordForm.searchType === "username" ? lostPasswordForm.value : ""}
+                      onChange={(e) => {
+                        setLostPasswordForm({ searchType: "username", value: e.target.value });
+                      }}
+                    />
+                  </label>
+                  <button
+                    type="submit"
+                    className="lost-password-search-btn"
+                    onClick={() => setLostPasswordForm({ ...lostPasswordForm, searchType: "username" })}
+                  >
+                    Search
+                  </button>
+                </div>
+
+                <hr className="lost-password-divider" />
+
+                <div className="lost-password-section">
+                  <h3>Search by email address</h3>
+                  <label>
+                    <span>Email address</span>
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={lostPasswordForm.searchType === "email" ? lostPasswordForm.value : ""}
+                      onChange={(e) => {
+                        setLostPasswordForm({ searchType: "email", value: e.target.value });
+                      }}
+                    />
+                  </label>
+                  <button
+                    type="submit"
+                    className="lost-password-search-btn"
+                    onClick={() => setLostPasswordForm({ ...lostPasswordForm, searchType: "email" })}
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
+
+              {lostPasswordMessage && (
+                <p className="lost-password-message">{lostPasswordMessage}</p>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
