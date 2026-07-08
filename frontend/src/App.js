@@ -13,6 +13,8 @@ import Typography from "./pages/typography";
 import ThemeCore from "./pages/theme_core";
 import FlexibleLayout from "./pages/flexible_layout";
 import Responsive from "./pages/responsive";
+import Multilanguage from "./pages/Multilanguage";
+import BuiltInComponents from "./pages/built_in_components";
 
 function AppContent() {
   const location = useLocation();
@@ -36,6 +38,7 @@ function AppContent() {
         <Route path="/theme_core" element={<ThemeCore />} />
         <Route path="/flexible_layout" element={<FlexibleLayout />} />
         <Route path="/responsive" element={<Responsive />} />
+        <Route path="/multilanguage" element={<Multilanguage />} />
       </Routes>
     </>
   );

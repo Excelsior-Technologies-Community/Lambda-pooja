@@ -83,8 +83,7 @@ const [showSearch, setShowSearch] = useState(false);
               <li><Link to="/theme_core">Theme Core Features</Link></li>
               <li><Link to="/flexible_layout">Flexible Layout</Link></li>
               <li><Link to="/responsive">Responsive Design</Link></li>
-            
-              <li><a href="/multilanguage">Multilanguage</a></li>
+              <li><Link to="/multilanguage">Multilanguage</Link></li>
               <li><a href="/components">Built-in Components</a></li>
             </ul>
           </li>

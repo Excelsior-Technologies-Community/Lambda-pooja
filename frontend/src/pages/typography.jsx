@@ -1,9 +1,13 @@
 import Footer from "../components/Footer";
 import "./typography.css";
+import { useNavigate } from "react-router-dom";
 
-const headingLevels = [1, 2, 3, 4, 5, 6];
+
 
 function Typography() {
+  
+const headingLevels = [1, 2, 3, 4, 5, 6];
+  const navigate = useNavigate();
   return (
     <>
       <main className="typography-page">
@@ -14,7 +18,7 @@ function Typography() {
           </div>
 
           <div className="typography-actions">
-            <button className="typography-next">Next</button>
+            <button className="typography-next" onClick={() => navigate("/theme_core")}>Next</button>
           </div>
 
           <section className="typography-section">

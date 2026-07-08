@@ -1,8 +1,9 @@
 import Footer from "../components/Footer";
 import "./responsive.css";
+import { useNavigate } from "react-router-dom";
 
 function FlexibleLayout() {
-
+ const navigate = useNavigate();
     return (
         <>
 
@@ -13,8 +14,8 @@ function FlexibleLayout() {
                 <button className="theme-core-tab">More</button>
             </div>
             <div className="theme-core-actions">
-                <button className="theme-core-Previous">Previous</button>
-                <button className="theme-core-next">Next</button>
+                <button className="theme-core-Previous" onClick={() => navigate("/flexible_layout")}>Previous</button>
+                <button className="responsive-next" onClick={() => navigate("/multilanguage")}>Next</button>
             </div>
 
                 <div className="theme-title">
@@ -30,8 +31,8 @@ function FlexibleLayout() {
                 <img src="https://lambda-demo-01.redpithemes.com/pluginfile.php/143/mod_book/chapter/5/undraw_devices_re_dxae.svg" alt="Responsive Design" className="responsive-image" />
                 
                 <div className="theme-core-actions">
-                <button className="theme-core-Previous">Previous</button>
-                <button className="theme-core-next">Next</button>
+                <button className="theme-core-Previous" onClick={() => navigate("/flexible_layout")}>Previous</button>
+                <button className="responsive-next" onClick={() => navigate("/multilanguage")}>Next</button>
             </div>
             </section>
             </main>

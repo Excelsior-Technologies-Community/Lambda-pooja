@@ -1,8 +1,8 @@
 import Footer from "../components/Footer";
 import "./flexible_layout.css";
-
+import { useNavigate } from "react-router-dom";
 function FlexibleLayout() {
-
+const navigate = useNavigate();
      const features = [
     {
       title: "Layout Options",
@@ -36,8 +36,8 @@ function FlexibleLayout() {
                 <button className="theme-core-tab">More</button>
             </div>
             <div className="theme-core-actions">
-                <button className="theme-core-Previous">Previous</button>
-                <button className="theme-core-next">Next</button>
+                <button className="theme-core-Previous" onClick={() => navigate("/theme_core")}>Previous</button>
+                <button className="theme-core-next" onClick={() => navigate("/responsive")}>Next</button>
             </div>
 
                 <div className="theme-title">
@@ -51,16 +51,15 @@ function FlexibleLayout() {
                         </p>
                 </div>
 
-<div className="theme-core-container">
-                 <div className="theme-core-left">
-
+        <div className="theme-core-container">
+          <div className="theme-core-left">
             <div className="theme-grid">
-              {features.map((item, index) => (
-                <div className="theme-card" key={index}>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              ))}
+                  {features.map((item, index) => (
+                    <div className="theme-card" key={index}>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                    </div>
+                  ))}
             </div>
 
           </div>
@@ -72,10 +71,13 @@ function FlexibleLayout() {
               className="theme-core-image"
             />
           </div>
-      </div> 
+        </div> 
+
+
+
        <div className="theme-core-actions">
-                <button className="theme-core-Previous">Previous</button>
-                <button className="theme-core-next">Next</button>
+                <button className="theme-core-Previous" onClick={() => navigate("/theme_core")}>Previous</button> 
+                <button className="theme-core-next" onClick={() => navigate("/responsive")}>Next</button>
             </div>
 
             </section>

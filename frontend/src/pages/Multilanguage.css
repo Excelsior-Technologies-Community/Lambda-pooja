@@ -1,0 +1,140 @@
+.multilanguage-page {
+  background: #eef0f2;
+  color: #3f4b56;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 12px 0 34px;
+}
+
+.multilanguage-card {
+  background: #fff;
+  border-radius: 3px;
+  margin: 0 auto;
+  max-width: 1214px;
+  min-height: 660px;
+  padding: 0 16px 34px;
+}
+
+.multilanguage-tabs {
+  border-bottom: 1px solid #d9dee2;
+  display: flex;
+  gap: 0;
+  padding-top: 18px;
+}
+
+.multilanguage-tab {
+  background: transparent;
+  border: 0;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 16px 10px;
+}
+
+.multilanguage-tab.active {
+  border-bottom: 2px solid #f8aa1c;
+  color: #3f4b56;
+}
+.multilanguage-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 31px 5px 18px;
+}
+
+.multilanguage-Previous,
+.multilanguage-next {
+  background: #56616b;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+
+.multilanguage-title{
+    text-align:center;
+    margin:60px  70px;
+    background-color: white;
+    
+}
+
+.multilanguage-title span{
+    color:#f5a623;
+    font-size:18px;
+}
+
+.multilanguage-title h2{
+    font-size:30px;
+    font-weight:400;
+    margin:15px 0;
+    color:#666;
+}
+
+.multilanguage-title p{
+    color:#666;
+    font-size:17px !important;
+}
+
+.multilanguage-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    width:90%;
+    margin:50px auto;
+}
+
+
+.multilanguage-right{
+    flex:2;
+}
+
+.multilanguage-left{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.multilanguage-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.multilanguage-card{
+    background:#fff;
+    padding:25px 20px;
+    border:1px solid #eee;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.multilanguage-card h3{
+    margin-bottom:15px;
+    font-size:20px;
+    color:#919191;
+    font-weight:300;
+}
+
+.multilanguage-card p{
+    color:#555;
+    line-height:28px;
+    font-size:14px;
+}
+
+.multilanguage-image{
+    width:320px;
+    max-width:100%;
+    height:auto;
+}
+
+
+.theme-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+  width: 100%;
+}
