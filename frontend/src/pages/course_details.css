@@ -399,6 +399,21 @@
   .course-contacts {
     grid-column: 1 / -1;
   }
+
+  .information-box button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .course-share-row {
+    gap: 8px;
+  }
+
+  .share-button {
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -458,5 +473,26 @@
   .course-scroll-top {
     right: 16px;
     bottom: 20px;
+  }
+
+  /* hide floating quick-scroll on very small screens */
+  .course-scroll-top {
+    display: none;
+  }
+}
+
+/* Extra small screens tweaks */
+@media (max-width: 420px) {
+  .course-title-block h1,
+  .enrolment-options h2 {
+    font-size: 22px;
+  }
+
+  .course-cover-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .learn-section li {
+    font-size: 13px;
   }
 }

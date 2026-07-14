@@ -589,6 +589,7 @@ DELIMITER ;
 select * from theme_core_features ;
 
 drop table built_in_components;
+
 CREATE TABLE built_in_components (
     id INT AUTO_INCREMENT PRIMARY KEY,
     image VARCHAR(500),
@@ -613,15 +614,15 @@ VALUES
 'https://lambda-demo-01.redpithemes.com/pluginfile.php/109/course/overviewfiles/course-img.jpg',
 'Bootstrap Components',
 'Miscellaneous',
-'Bootstrap is a powerful frontend toolkit. This course contains a collection of available components.',
+'Bootstrap is a powerful, feature-packed frontend toolkit.. This course contains a collection of available components for this framework.',
 'Click to enter this course'
 ),
 
 (
 'https://lambda-demo-01.redpithemes.com/pluginfile.php/127/course/overviewfiles/course-img.jpg',
-'Built-in Components',
+'H5P Demo Course',
 'Miscellaneous',
-'Collection of built-in components available in Lambda.',
+'H5P is a plugin for existing publishing systems that enables the system to create interactive content like Interactive Videos, Presentations, Games, Quizzes and more!',
 'Click to enter this course'
 );
 

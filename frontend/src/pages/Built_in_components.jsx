@@ -39,7 +39,8 @@ const fetchData = async () => {
                         <h2>Full of features, easy to include</h2>
 
                         <p>
-                          Lambda offers dedicated content plugins with multiple components that you can customize. It's very easy to create a page with your unique settings and you don't need to know a single line of code.
+                          
+                          ultiple components that you can customize. It's very easy to create a page with your unique settings and you don't need to know a single line of code.
                         </p>
                 </div>
             <hr className="theme-divider" />

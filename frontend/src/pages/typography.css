@@ -422,3 +422,89 @@
     font-size: 32px;
   }
 }
+
+/* Additional responsive tweaks for typography page */
+@media (max-width: 1024px) {
+  .typography-card {
+    padding: 0 20px 28px;
+    min-height: auto;
+  }
+
+  .list-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .fontawesome-example {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fontawesome-example i {
+    font-size: 2.5rem;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .example-box {
+    padding: 28px 16px 16px;
+  }
+
+  /* Make tables scrollable on narrower screens */
+  .table-default,
+  .table-primary,
+  .table-striped {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .typography-actions {
+    justify-content: center;
+    padding: 18px 12px;
+  }
+
+  .typography-next {
+    width: 100%;
+  }
+
+  .headline-example h2 {
+    font-size: 22px;
+  }
+
+  .paragraph-example p,
+  .headline-example p:last-child {
+    font-size: 15px;
+  }
+
+  .list-columns {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typography-title {
+    font-size: 24px;
+  }
+
+  .heading-row h1 {
+    font-size: 28px;
+  }
+
+  .fontawesome-example i {
+    font-size: 2rem;
+  }
+
+  .example-label {
+    padding: 8px 6px;
+    font-size: 13px;
+  }
+
+  .example-box {
+    padding: 18px 12px 12px;
+  }
+}

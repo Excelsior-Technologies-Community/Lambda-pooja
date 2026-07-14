@@ -1,0 +1,98 @@
+/* Global responsive helpers applied across all pages */
+@media (max-width: 1200px) {
+  .all-courses-container,
+  .course-details-card,
+  .all-courses-panel,
+  .theme-core-card,
+  .login-panel,
+  .page-container,
+  .about-container {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  img,
+  .course-image,
+  .course-cover-image,
+  .slider-image,
+  .intro-hero img,
+  .art-history-hero img,
+  .biology-hero img,
+  .team-image img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .feature-grid,
+  .art-history-tile-grid,
+  .cards,
+  .benefits-section,
+  .announcement-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-grid,
+  .art-history-tile-grid,
+  .cards,
+  .benefits-section,
+  .announcement-grid,
+  .course-details-grid,
+  .all-courses-panel,
+  .about-content {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+  }
+
+  .navbar .menu {
+    flex-wrap: wrap !important;
+  }
+
+  .overlay {
+    right: 16px !important;
+    left: 16px !important;
+    width: auto !important;
+    transform: translateY(-50%) !important;
+    text-align: left !important;
+  }
+
+  .overlay h1 {
+    font-size: 22px !important;
+  }
+
+  .course-card-content,
+  .course-section-row {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px !important;
+  }
+
+  .overlay {
+    padding: 12px !important;
+  }
+
+  .feature-card,
+  .card,
+  .benefit-card {
+    padding: 12px !important;
+  }
+
+  .course-button,
+  .course-btn,
+  .primary-login-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Small utility helpers */
+.img-fluid { max-width:100%; height:auto; }
+.stack-on-mobile { display:block !important; }

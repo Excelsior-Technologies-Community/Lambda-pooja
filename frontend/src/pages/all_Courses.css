@@ -16,8 +16,8 @@
   margin: 0 0 28px;
   padding: 12px 15px;
   border-radius: 2px;
-  background: #f8b936;
-  color: #ffffff;
+  background: #f8b936 !important;
+  color: #ffffff !important;
   font-size: 30px;
   font-weight: 400;
   line-height: 1.08;
@@ -797,6 +797,105 @@ button.biology-round-button:hover {
 .biology-resource-list {
   display: flex;
   flex-direction: column;
+}
+
+/* Responsive rules for All Courses page */
+@media (max-width: 1024px) {
+  .all-courses-container {
+    width: calc(100% - 32px);
+    padding: 0 12px;
+  }
+
+  .all-courses-panel {
+    grid-template-columns: 1fr 300px;
+    gap: 28px;
+    padding: 20px 24px 0 24px;
+  }
+
+  .course-image-wrap {
+    width: 280px;
+    height: 180px;
+  }
+
+  .course-card-content {
+    grid-template-columns: 260px 1fr;
+  }
+
+  .intro-hero,
+  .art-history-hero,
+  .biology-hero {
+    width: 100%;
+    height: 220px;
+    margin: 0 auto 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-courses-panel {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .courses-sidebar {
+    order: 2;
+    width: 100%;
+  }
+
+  .course-content-panel {
+    order: 1;
+    padding: 16px;
+  }
+
+  .course-card-content {
+    display: block;
+  }
+
+  .course-image-wrap {
+    width: 100%;
+    height: auto;
+  }
+
+  .course-image {
+    height: auto;
+    max-height: 360px;
+  }
+
+  .course-button {
+    min-width: 160px;
+    width: auto;
+  }
+
+  .art-history-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .art-history-tile {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card-content {
+    padding: 0;
+  }
+
+  .course-detail h3 {
+    font-size: 16px;
+  }
+
+  .theme-title {
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+
+  .category-dropdown {
+    width: 100%;
+  }
+
+  .category-select-wrap {
+    padding: 0 12px;
+  }
 }
 
 .biology-resource-row {

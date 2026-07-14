@@ -228,7 +228,7 @@ function Login() {
                     <span>Username</span>
                     <input
                       type="text"
-                      placeholder="Enter your username"
+                      placeholder="Enter your username"  
                       value={lostPasswordForm.searchType === "username" ? lostPasswordForm.value : ""}
                       onChange={(e) => {
                         setLostPasswordForm({ searchType: "username", value: e.target.value });
