@@ -1,12 +1,14 @@
 .gallery-container {
-  width: 90%;
+  width: min(92%, 1200px);
   margin: 70px auto;
+  box-sizing: border-box;
 }
 
 .gallery-container h2 {
   text-align: center;
   color: #1d3557;
   font-size: 34px;
+  margin-bottom: 12px;
 }
 
 .gallery-container p {
@@ -14,13 +16,15 @@
   color: gray;
   margin-bottom: 45px;
   font-size: 22px;
+  line-height: 1.6;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 260px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, 1fr);
   gap: 12px;
+  width: 100%;
 }
 
 /* Image Box */
@@ -29,6 +33,9 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  width: 100%;
+  min-height: 220px;
+  background: #f3f3f3;
 }
 
 /* Third Image Tall */
@@ -42,7 +49,9 @@
 .gallery-item img {
   width: 100%;
   height: 100%;
+  min-height: 220px;
   object-fit: cover;
+  display: block;
   transition: .5s;
 }
 
@@ -100,34 +109,68 @@
 
 /* Responsive */
 
-@media(max-width:992px){
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-.gallery-grid{
+  .gallery-item,
+  .gallery-item img {
+    min-height: 220px;
+  }
 
-grid-template-columns:repeat(2,1fr);
-
+  .gallery-tall {
+    grid-row: span 1;
+  }
 }
 
-.gallery-tall{
+@media (max-width: 768px) {
+  .gallery-container {
+    width: 95%;
+    margin: 40px auto;
+  }
 
-grid-row:span 1;
+  .gallery-container h2 {
+    font-size: 28px;
+  }
 
+  .gallery-container p {
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .gallery-item,
+  .gallery-item img {
+    min-height: 240px;
+  }
+
+  .gallery-tall {
+    grid-row: span 1;
+  }
 }
 
-}
+@media (max-width: 480px) {
+  .gallery-container h2 {
+    font-size: 24px;
+  }
 
-@media(max-width:768px){
+  .gallery-container p {
+    font-size: 15px;
+  }
 
-.gallery-grid{
+  .gallery-overlay a {
+    width: 54px;
+    height: 54px;
+    font-size: 30px;
+  }
 
-grid-template-columns:1fr;
-
-}
-
-.gallery-tall{
-
-grid-row:span 1;
-
-}
-
+  .gallery-item,
+  .gallery-item img {
+    min-height: 200px;
+  }
 }
