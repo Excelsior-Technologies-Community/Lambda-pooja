@@ -348,6 +348,10 @@ CREATE TABLE contacts (
     message TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+INSERT INTO contacts (name, email, subject, message) VALUES
+('John Doe', 'john@example.com', 'Course Admission Query', 'Hello, I would like to know when the Creative Writing course admission starts for the Fall term. Thanks!'),
+('Jane Smith', 'jane.smith@example.com', 'Technical issue with login', 'Hi support team, I am experiencing issues logging in to the mobile hybrid learning portal. Can you assist?'),
+('Michael Scott', 'michael.scott@dundermifflin.com', 'Corporate training packages', 'Hello! We are looking to enroll our sales team into your digital skills course. Do you offer corporate training discounts?');
 select * from contacts;
 
 -- Login users table

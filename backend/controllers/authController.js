@@ -83,3 +83,36 @@ exports.register = async (req, res) => {
     });
   }
 };
+
+exports.forgotPassword = async (req, res) => {
+  try {
+    const { username, email } = req.body;
+
+    if (!username && !email) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide either username or email",
+      });
+    }
+
+    const user = await userModel.findUserByLogin(username || email, "");
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "No account was found with that username or email",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "If an account exists, a reset link has been sent to your email",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};

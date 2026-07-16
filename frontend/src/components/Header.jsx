@@ -1,6 +1,7 @@
 import "./Header.css";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import {
   FaUser,
@@ -12,8 +13,51 @@ import {
 } from "react-icons/fa";
 
 function Header() {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [headerUsername, setHeaderUsername] = useState("");
+  const [headerPassword, setHeaderPassword] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
-const [showSearch, setShowSearch] = useState(false);
+  useEffect(() => {
+    const savedUser = localStorage.getItem("lambdaUser");
+    if (savedUser) {
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch (e) {
+        setUser(null);
+      }
+    }
+  }, []);
+
+  const handleHeaderLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
+        username: headerUsername.trim(),
+        password: headerPassword,
+      });
+      localStorage.setItem("lambdaUser", JSON.stringify(res.data.user));
+      setUser(res.data.user);
+      setHeaderUsername("");
+      setHeaderPassword("");
+      if (res.data.user.username === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
+    } catch (err) {
+      alert(err.response?.data?.message || "Invalid credentials");
+      navigate("/login");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("lambdaUser");
+    setUser(null);
+    navigate("/");
+  };
+
   return (
     <>
       <header className="header-top">
@@ -25,29 +69,57 @@ const [showSearch, setShowSearch] = useState(false);
         </div>
 
         <div className="login-wrapper">
-          <div className="login-row">
-            <div className="field">
-              <span className="field-icon">
-                <FaUser />
-              </span>
-              <input type="text" placeholder="Username" />
+          {user ? (
+            <div className="logged-in-user">
+              <span className="welcome-text">Welcome, <strong>{user.username}</strong>!</span>
+              {user.username === "admin" && (
+                <Link to="/admin" className="admin-link-btn">
+                  Admin Panel
+                </Link>
+              )}
+              <button onClick={handleLogout} className="logout-btn-header" type="button">
+                Log Out
+              </button>
             </div>
+          ) : (
+            <form onSubmit={handleHeaderLogin} className="login-row">
+              <div className="field">
+                <span className="field-icon">
+                  <FaUser />
+                </span>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  value={headerUsername}
+                  onChange={(e) => setHeaderUsername(e.target.value)}
+                  required
+                />
+              </div>
 
-            <div className="field">
-              <span className="field-icon">
-                <FaLock />
-              </span>
-              <input type="password" placeholder="Password" />
-            </div>
+              <div className="field">
+                <span className="field-icon">
+                  <FaLock />
+                </span>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={headerPassword}
+                  onChange={(e) => setHeaderPassword(e.target.value)}
+                  required
+                />
+              </div>
 
-            <button className="login-btn">
-              <FaAngleRight />
-            </button>
-          </div>
+              <button type="submit" className="login-btn">
+                <FaAngleRight />
+              </button>
+            </form>
+          )}
 
-          <a href="/" className="forgot-password">
-            Forgotten your username or password?
-          </a>
+          {!user && (
+            <Link to="/login" className="forgot-password">
+              Forgotten your username or password?
+            </Link>
+          )}
         </div>
       </header>
 

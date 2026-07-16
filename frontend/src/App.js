@@ -15,10 +15,11 @@ import FlexibleLayout from "./pages/flexible_layout";
 import Responsive from "./pages/responsive";
 import Multilanguage from "./pages/Multilanguage";
 import BuiltInComponents from "./pages/Built_in_components";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 function AppContent() {
   const location = useLocation();
-  const hideHeader = location.pathname === "/login";
+  const hideHeader = location.pathname === "/login" || location.pathname.startsWith("/admin");
 
   return (
     <>
@@ -40,6 +41,7 @@ function AppContent() {
         <Route path="/responsive" element={<Responsive />} />
         <Route path="/multilanguage" element={<Multilanguage />} />
         <Route path="/built-in-components" element={<BuiltInComponents />} />
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </>
   );

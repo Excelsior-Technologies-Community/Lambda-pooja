@@ -326,3 +326,50 @@
   align-items: center;
   cursor: pointer;
 }
+
+.logged-in-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 15px;
+  height: 38px;
+  border-radius: 4px;
+}
+
+.welcome-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.admin-link-btn {
+  background: linear-gradient(135deg, #d5a11e, #b48512);
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.admin-link-btn:hover {
+  opacity: 0.9;
+}
+
+.logout-btn-header {
+  background: #6d7985;
+  color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn-header:hover {
+  background: #505c68;
+}

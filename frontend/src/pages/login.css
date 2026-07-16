@@ -256,7 +256,7 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1000ms ease;
+  transition: opacity 1ms ease;
 }
 
 .login-image-slider img.active {

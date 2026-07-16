@@ -21,11 +21,13 @@ const faqRoutes = require("./routes/faqRoutes");
 const authRoutes = require("./routes/authRoutes");
 const themeCoreRoutes = require("./routes/themeCoreRoutes");
 const builtInComponentsRoutes = require("./routes/builtInComponentsRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 app.use("/api/sliders", sliderRoutes);
 app.use("/api/sections", sectionRoutes);
 app.use("/api/features", featureRoutes);
 app.use("/api/courses", courseRoutes);
+app.use("/api/admin", adminRoutes);
 app.get("/", (req, res) => {res.send("Lambda Backend Running");});
 app.use("/api/announcements",announcementRoutes);
 app.use("/api", teamRoutes);
